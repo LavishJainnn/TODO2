@@ -1,0 +1,102 @@
+body{
+    background-color: black;
+}
+.innerbox1{
+    width: 450px;
+    height: 100px;
+    padding: 10px;
+    background: linear-gradient(to bottom right, #7303c0, #ec38bc, #c6426e, #ffa135);
+    border-radius: 20px;
+    margin: 100px 525px;
+}
+@font-face {
+    font-family: 'Bulgatti';
+    src: url('bulgatti/Bulgatti.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+ }
+.box1{
+    background-color: black;
+    text-align: center;
+    height: 100px;
+    width: 450px;
+    border-radius: 10px;
+    color: rgb(248, 248, 234);
+    line-height: 100px;
+    font-family: Bulgatti;
+    letter-spacing: 3px;
+    word-spacing: 6px;
+    font-size: small;
+}
+h1{
+    margin: 0px;
+}
+.done{
+    margin: 100px 525px;
+    width: 450px;
+    height: 55px;
+    background: linear-gradient(to bottom right, #7303c0, #ec38bc, #c6426e, #ffa135);
+    padding: 3px;
+    border-radius: 20px;
+}
+.formbox{
+    background-color: black;
+    width: 450px;
+    height: 55px;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+}
+.formbox input{
+    background-color: transparent;
+    border: 0px solid transparent;
+    width: 380px;
+    height: 55px;
+    border-radius: 17px;
+    padding-left: 15px;
+    font-size: 20px;
+    color: beige;
+}
+.formbox button{
+    width: 35px;
+    height: 55px;
+    font-size: 35px;
+    background-color: transparent;
+    border: 0px solid transparent;
+    color: beige;
+}
+.formbox input:focus{
+    background-color: transparent;
+    border: 0px solid transparent;
+    outline: none;
+}
+.item{
+    width: 400px;
+    height: 45px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom right, #7303c0, #ec38bc, #c6426e, #ffa135);
+    padding: 1px;
+    border-radius: 20px;
+}
+.listEle{
+    width: 400px;
+    height: 45px;
+    border-radius: 19px;
+    background: black;
+    color: beige;
+    font-size: 25px;
+}
+.listEle input:checked + p{
+    text-decoration: line-through;
+}
+.check{
+    margin-left: 15px;
+}
+.task{
+    line-height: 0px;
+    margin-left: 10px;
+}
+.inside{
+    display: inline-block;
+    vertical-align: middle;
+}
