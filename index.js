@@ -32,11 +32,12 @@ app.post("/", function(req,res){
     })
     if(todotask.name && todotask.name.trim() !== ""){
         todotask.save();
+        res.redirect("/");
     }
-    else{
-        alert("Task cannot be empty.")
+    else {
+        res.redirect("/?error=empty");
+        return;
     }
-    res.redirect("/");
 });
 
 
