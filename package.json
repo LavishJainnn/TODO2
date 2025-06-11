@@ -13,6 +13,8 @@
     "body-parser": "^2.2.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "filelist": "^1.0.2",
+    "jake": "^10.8.5",
     "mongodb": "^6.17.0",
     "mongoose": "^8.15.1"
   },
