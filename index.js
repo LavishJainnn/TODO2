@@ -6,7 +6,7 @@ app.use(express.static('public'));
 app.set("view engine", "ejs");
 
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://lavishjain30306:iyTn726yDmdJLo2t@todolist.je6sg7l.mongodb.net/?retryWrites=true&w=majority&appName=TODOLIST");
+mongoose.connect("mongodb+srv://lavishjain30306:Xm8OKcDOaxulY3ls@todo2-cluster.mgcnmg7.mongodb.net/?retryWrites=true&w=majority&appName=TODO2-cluster");
 const dt = new mongoose.Schema({
     name: String
 });
