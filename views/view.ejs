@@ -23,6 +23,11 @@
             </div>
         <% } %>
     <% } %>
+    <% if (typeof req !== 'undefined' && req.query.error === 'empty') { %>
+        <script>
+            alert("Task cannot be empty.");
+        </script>
+    <% } %>
 
     <form action="/" method="POST" class="done">
         <div class="formbox">

@@ -16,7 +16,7 @@ const items = mongoose.model("todo",dt);
 app.get("/", function(req,res){
     items.find({})
         .then(Ti => {
-            res.render("view", {arr: Ti});
+            res.render("view", {arr: Ti,req: req});
             console.log("Added sucessfully !")
         })
         .catch(err => {
