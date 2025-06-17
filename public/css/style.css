@@ -48,14 +48,11 @@ h1{
     align-items: center;
 }
 .formbox input{
-    background-color: transparent;
-    border: 0px solid transparent;
     width: 380px;
     height: 55px;
     border-radius: 17px;
     padding-left: 15px;
     font-size: 20px;
-    color: beige;
 }
 .formbox button{
     width: 35px;
@@ -65,10 +62,16 @@ h1{
     border: 0px solid transparent;
     color: beige;
 }
-.formbox input:focus{
+input{
+    background-color: transparent;
+    border: 0px solid transparent;
+    color: beige;
+}
+input:focus{
     background-color: transparent;
     border: 0px solid transparent;
     outline: none;
+    color: beige;
 }
 .item{
     width: 400px;
@@ -95,6 +98,52 @@ h1{
 .task{
     line-height: 0px;
     margin-left: 10px;
+}
+.delete{
+    width: 30px;
+    height: 30px;
+    color: beige;
+    background: transparent;
+    border: 0px solid transparent;
+    float: right;
+    margin-top: 6px;
+    margin-right: 8px;
+    font-size: 20px;
+}
+.editicon{
+    width: 30px;
+    height: 30px;
+    color: beige;
+    background: transparent;
+    border: 0px solid transparent;
+    float: right;
+    margin-top: 6px;
+    margin-right: 5px;
+}
+.editsave{
+    font-size: 22px;
+    height: 30px;
+    width: 280px;
+    line-height: 0px;
+    margin-left: -15px;
+    border-radius: 10px;
+    border-bottom: 1px solid #ffa135;
+    padding-left: 10px;
+}
+.editsave input:active{
+    border-bottom: 1px solid #ffa135;
+}
+.pencil{
+    margin: 10px;
+}
+.save{
+    line-height: 0px;
+    width: 35px;
+    height: 35px;
+    font-size: 35px;
+    background-color: transparent;
+    border: 0px solid transparent;
+    color: beige;
 }
 .inside{
     display: inline-block;

@@ -3,6 +3,9 @@
 <head>
     <title>To-Do list</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Include Ionicons if not already -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <div class="innerbox1">
@@ -10,28 +13,45 @@
             <h1>To-Do list :</h1>
         </div>
     </div>
-    
+
     <% if(arr.length > 0){ %>
         <% for(var i=0; i<arr.length; i++){ %>
             <div class="item">
-                <form action="/delete" method="POST">
-                    <div class="listEle">
-                        <input class="check inside" type="checkbox" value = "<%= arr[i]._id %>" name="delete" onchange="this.form.submit()">
-                        <p class="task inside"><%= arr[i].name %></p>
-                    </div>
-                </form>
+                <% if (req.query.edit === arr[i]._id.toString()) { %>
+                    <!-- Edit Mode -->
+                    <form action="/edit" method="POST">
+                        <div class="listEle">
+                            <input type="hidden" name="edit" class="inside editsave" value="<%= arr[i]._id %>">
+                            <ion-icon name="pencil-outline" class="inside pencil"></ion-icon>
+                            <input type="text" name="newName" class="inside editsave" value="<%= arr[i].name %>" required>
+                            <button type="submit" class="inside save" ><ion-icon name="return-down-back-outline"></ion-icon></button>
+                        </div>
+                    </form>
+                <% } else { %>
+                    <!-- Normal Mode -->
+                    <form action="/delete" method="POST">
+                        <div class="listEle">
+                            <input class="check inside" type="checkbox" value="<%= arr[i]._id %>">
+                            <p class="task inside"><%= arr[i].name %></p>
+                            <button class="delete inside" name="delete" value="<%= arr[i]._id %>">x</button>
+                            <a href="/?edit=<%= arr[i]._id %>" class="inside editicon"><ion-icon name="create-outline"></ion-icon></a>
+                        </div>
+                    </form>
+                <% } %>
             </div>
         <% } %>
     <% } %>
+
     <% if (typeof req !== 'undefined' && req.query.error === 'empty') { %>
         <script>
             alert("Task cannot be empty.");
         </script>
     <% } %>
 
+    <!-- New Task Form -->
     <form action="/" method="POST" class="done">
         <div class="formbox">
-            <input type="text" placeholder="Enter new task" name="element">
+            <input type="text" placeholder="Enter new task" name="element" required>
             <button class="submit" type="submit">+</button>
         </div>
     </form>

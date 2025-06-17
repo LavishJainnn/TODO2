@@ -7,6 +7,7 @@ app.set("view engine", "ejs");
 
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://lavishjain30306:EpTFPqkOWTA27LMP@todo2-cluster1.jrtmgkl.mongodb.net/?retryWrites=true&w=majority&appName=TODO2-cluster1");
+// mongoose.connect("mongodb://localhost:27017");
 const dt = new mongoose.Schema({
     name: String
 });
@@ -53,6 +54,24 @@ app.post("/delete", function(req,res){
             console.log(err);
         });
 });
+
+// # Editing data
+app.post("/edit", function(req, res) {
+    var editTask = req.body.edit;
+    var newTask = req.body.newName;
+
+    items.findByIdAndUpdate(editTask, { name: newTask })
+        .then(() => {
+            console.log("Edited successfully!");
+            res.redirect("/");
+        })
+        .catch(err => {
+            console.error("Edit error:", err);
+            res.status(500).send("Failed to edit task");
+        });
+});
+
+
 
 app.listen(121,function(){
     console.log("Server Started");
