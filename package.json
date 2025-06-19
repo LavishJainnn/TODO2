@@ -15,6 +15,7 @@
     "express": "^5.1.0",
     "filelist": "^1.0.2",
     "jake": "^10.8.5",
+    "method-override": "^3.0.0",
     "mongodb": "^6.17.0",
     "mongoose": "^8.15.1"
   },

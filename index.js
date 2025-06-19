@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = new express();
+const methodOverride = require('method-override');
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set("view engine", "ejs");
+app.use(methodOverride('_method'));
 
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://lavishjain30306:EpTFPqkOWTA27LMP@todo2-cluster1.jrtmgkl.mongodb.net/?retryWrites=true&w=majority&appName=TODO2-cluster1");
@@ -43,7 +45,7 @@ app.post("/", function(req,res){
 
 
 // # Deleting data
-app.post("/delete", function(req,res){
+app.delete("/delete", function(req,res){
     var delTask = req.body.delete;
     items.findByIdAndDelete(delTask)
         .then(t => {
@@ -56,7 +58,7 @@ app.post("/delete", function(req,res){
 });
 
 // # Editing data
-app.post("/edit", function(req, res) {
+app.put("/edit", function(req, res) {
     var editTask = req.body.edit;
     var newTask = req.body.newName;
 

@@ -19,7 +19,7 @@
             <div class="item">
                 <% if (req.query.edit === arr[i]._id.toString()) { %>
                     <!-- Edit Mode -->
-                    <form action="/edit" method="POST">
+                    <form action="/edit?_method=PUT" method="POST">
                         <div class="listEle">
                             <input type="hidden" name="edit" class="inside editsave" value="<%= arr[i]._id %>">
                             <ion-icon name="pencil-outline" class="inside pencil"></ion-icon>
@@ -29,7 +29,7 @@
                     </form>
                 <% } else { %>
                     <!-- Normal Mode -->
-                    <form action="/delete" method="POST">
+                    <form action="/delete?_method=DELETE" method="POST">
                         <div class="listEle">
                             <input class="check inside" type="checkbox" value="<%= arr[i]._id %>">
                             <p class="task inside"><%= arr[i].name %></p>
